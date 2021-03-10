@@ -5,10 +5,12 @@
 
 ## Integrantes del equipo
 
+
 [- Almudena Pérez Nieto, @almuperezzz
 - Tian Yao Lin @TianYaoLin
 - Sofía Toledo Delgado @sofiatoledo]
 - Laura Sedano Molero @laurasedanomolero
+- Patricia  Plaza  Ramos @PatriciaPlazaRamos
 
 ## Objetivos del trabajo
 
