@@ -5,8 +5,7 @@
 
 ## Integrantes del equipo
 
-
-[- Almudena Pérez Nieto, @almuperezzz
+[- Almudena Pérez Nieto,
 - Tian Yao Lin @TianYaoLin
 - Sofía Toledo Delgado @sofiatoledo]
 - Laura Sedano Molero @laurasedanomolero
