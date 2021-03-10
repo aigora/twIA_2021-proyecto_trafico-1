@@ -1,10 +1,12 @@
 # [Título del trabajo]
 
-[Descripción breve del proyecto a realizar (2-3 frases).]
+[Proyecto_Tráfico
+-Poder controlar el flujo del tráfico gracias a un radar (sensor de velocidad) y a un semaforo(sensor de movimiento). Gracias a un programa de visual studio seremos capaces de calcular (con funciones) cuanto dinero se ha recaudado según las infracciones cometidas.]
 
 ## Integrantes del equipo
 
-[Tian Yao Lin, Patricia Plaza Ramos]
+[Tian Yao Lin
+- Almudena Pérez Nieto, almuperezzz]
 
 ## Objetivos del trabajo
 
