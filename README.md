@@ -4,7 +4,7 @@
 
 ## Integrantes del equipo
 
-[Tian Yao Lin]
+[Tian Yao Lin, Patricia Plaza Ramos]
 
 ## Objetivos del trabajo
 
