@@ -6,7 +6,8 @@
 ## Integrantes del equipo
 
 [Tian Yao Lin
-- Almudena Pérez Nieto, almuperezzz]
+- Almudena Pérez Nieto, almuperezzz
+- Patricia Plaza, PatriciaPlazaRamos]
 
 ## Objetivos del trabajo
 
