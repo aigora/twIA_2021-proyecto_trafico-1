@@ -6,7 +6,8 @@
 ## Integrantes del equipo
 
 [- Almudena Pérez Nieto, @almuperezzz
-- Tian Yao Lin @TianYaoLin]
+- Tian Yao Lin @TianYaoLin
+- Sofía Toledo Delgado @sofiatoledo]
 
 ## Objetivos del trabajo
 
