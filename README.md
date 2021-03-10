@@ -1,4 +1,4 @@
-# [Proyecto_Tráfico]
+# [Proyecto_Tráfico🚦🚘]
 
 [
 -Poder controlar el tráfico mediante un radar (sensor de velocidad) y un semaforo(sensor de movimiento). Gracias a un programa de visual studio seremos capaces de calcular (con funciones) cuanto dinero se ha recaudado según las infracciones cometidas.]
