@@ -5,8 +5,8 @@
 
 ## Integrantes del equipo
 
-[Tian Yao Lin
-- Almudena Pérez Nieto, almuperezzz]
+[- Almudena Pérez Nieto, @almuperezzz
+- Tian Yao Lin @TianYaoLin]
 
 ## Objetivos del trabajo
 
