@@ -1,0 +1,150 @@
+// Se ha pensado que el programa nos permitirá introducir los datos manualmente y se basará en una estructura definida
+previamente. El programa imprimirá por pantalla y nos solicitará introducir los datos de forma ordenada. Más tarde los almacenará.
+// MENÚ QUE APARECERÁ EN NUESTRO ORDENADOR
+#include <stdio.h>
+#include<stdlib.h>
+struct informacion
+{
+int orden_coche; // El orden que va pasandolos coches
+char matricula_coche[6];
+char color_coche[10]; // los colores del coche pueden azul, rojo, negro, amarillo;
+char nombre_conductor[15];
+};
+typedef struct{
+    int id_radar;
+    float velocidad_limite;
+    float umbral_20;
+    float umbral_40;
+    float umbral_resto;
+}T_RADAR;
+typedef struct{
+    int dia;
+    int mes;
+    int anio;
+}T_FECHA;
+#define DIM 5
+int main()
+{
+    T_RADAR *velocidad;
+    FILE *pf_multas;
+    int a,b;
+    int n_multas;
+    printf("Introduzca el numero de multas puestas: ");
+        if (n_multas<=0){ 
+            printf("Debes introducir un numero positivo entero");
+        }
+    }while(n_multas<=0);
+    do{
+                pf_multas=fopen("C:/Users/almup/OneDrive/Escritorio/p11/multas.txt","r");     
+        
+        if(pf_radares==NULL || pf_multas==NULL){
+            printf("Error al abrir los archivos");
+            if(pf_radares==NULL){
+                fclose(pf_radares);
+            }
+            if(pf_multas==NULL){
+                fclose(pf_multas);
+            }
+         velocidad = (T_MULTA *) calloc(n_multas, sizeof(T_MULTA));
+    if(v_radares == NULL || v_multas == NULL){
+        if(v_radares == NULL){
+            printf("\n Error en la asignacion de memoria: ");
+            free(v_radares);
+        }
+    printf ("Seleccione una opcion:\n\t1.Multas semaforo.\n\t2.Multas velocidad.\n\t3.Pagos totales.\n\t4.Salir.\n");
+    scanf_s ("%d", &a);
+        if (a == 1)
+{
+printf("Como desea introducir la informacion:\n\t1.Manual.\n\t2.Automatico.\n");
+scanf_s("%d", &b);
+switch (b)
+{
+case 1:
+struct informacion coches [DIM]; // Va a haber 5 coches
+int orden;
+printf("Cual es el coche que te interesa? \n");
+printf("(Introduce el orden que ha pasado)\n");
+scanf_s("%d", &orden);
+printf("La matricula del coche: ");
+gets_s(coches[orden].matricula_coche);
+printf("El color del coche: ");
+gets_s(coches[orden].color_coche);
+printf("El nombre del conductor: ");
+gets_s(coches[orden].nombre_conductor);
+break;
+case 2: *FUNCION CON LOS DATOS*;
+break;
+}
+}
+if (a == 2)
+{
+printf("Como desea introducir la informacion:\n\t1.Manual.\n\t2.Automatico.\n");
+scanf_s("%d", &b);
+switch (b)
+{
+case 1: struct informacion coches[5]; // Va a haber 5 coches
+int num_coche, orden;
+printf("Cual es el coche que te interesa? \n");
+printf("(Introduce el orden que ha pasado)\n");
+scanf_s("%d", &orden);
+printf("La matricula del coche: ");
+gets_s(coches[orden].matricula_coche);
+printf("El color del coche: ");
+gets_s(coches[orden].color_coche);
+printf("El nombre del conductor: ");
+gets_s(coches[orden].nombre_conductor);
+break;
+case 2: *FUNCION CON LOS DATOS*;
+break;
+}
+}
+if (a == 3)
+{
+*lo definiremos próximamente con una función*
+}
+if (a == 4)
+{
+exit(1);
+}
+}
+// Semáforo
+#include <stdio.h>
+#include <stdlib.h>
+int main ()
+{
+int num, i=0;
+for (i = 0; i < 6; i++)
+{
+num = rand() % 1; //definimos "0" como luz rojo del semáforo y "1" como luz verde del semáforo.
+}
+while (num==0 && detecta movimiento) //Aún no hemos programado los sensores de movimiento, lo haremos más tarde.
+{
+La cámara *hace una foto* al vehículo //Aún no hemos programado las cámaras.
+}
+}
+// Límite de velocidad
+// Creamos enteros para utilizar en el switch case.
+// Los enteros organizan los intervalos de velocidad y en función de ellos se asignan las multas.
+L
+c = velocidad; // Si el radar detecta velocidad > 40 y velocidad < 60, le asignamos c;
+}
+else if (velocidad > 60)
+{
+// Si el radar detecta velocidad > 60, se enviará al sistema un mensaje de que ha cometido un delito.
+}
+while (detecta movimiento)
+{
+switch (velocidad) //Hemos definido previamente a,b,c con los intervalos de velocidad
+{
+case a:
+no multa;
+break;
+case b:
+multa 50 euros;
+break;
+case c:
+multa 100 euros;
+break;
+default: mete en la carpeta de delito penal("delito penal");
+}
+}
