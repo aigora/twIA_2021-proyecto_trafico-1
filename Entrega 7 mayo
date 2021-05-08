@@ -1,0 +1,39 @@
+#define LED1 8     //Verde
+#define LED2 9       //Rojo
+
+#define sensorpir 7
+#define LED3 10   //Luz por si cruza en rojo
+ 
+void setup() {
+  // put your setup code here, to run once:
+ 
+pinMode (LED1, OUTPUT);
+pinMode (LED2, OUTPUT);
+
+pinMode(sensorpir, INPUT);   //sensor de movimiento
+pinMode (LED3, OUTPUT);    //Emisor
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+long duracion, distancia;
+ 
+digitalWrite (LED1, HIGH);     //Encender la luz
+digitalWrite (LED2, LOW);
+delay(5000);
+digitalWrite (LED1, LOW);     //Apagar la luz
+digitalWrite (LED2, HIGH);
+delay(5000);
+
+
+if(digitalRead(LED2) == HIGH) {
+  if(digitalRead(sensorpir) == HIGH) {
+    digitalWrite(LED3, HIGH);
+    delay(1000);
+    digitalWrite(LED3, LOW);
+  }
+}
+
+
+}
