@@ -1,0 +1,2 @@
+C:\Users\Laura\Desktop\ConexionSerieWired\x64\Debug\ConexionSerieWired.exe
+C:\Users\Laura\Desktop\ConexionSerieWired\x64\Debug\ConexionSerieWired.pdb

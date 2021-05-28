@@ -1,0 +1,3 @@
+﻿  ConexionSerieWired.cpp
+C:\Users\Laura\Desktop\ConexionSerieWired\ConexionSerieWired.cpp(33,62): warning C4267: 'argumento': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+  ConexionSerieWired.vcxproj -> C:\Users\Laura\Desktop\ConexionSerieWired\x64\Debug\ConexionSerieWired.exe
