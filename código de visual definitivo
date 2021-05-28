@@ -1,0 +1,216 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <windows.h>
+
+#define N 6
+
+//estructuras
+typedef struct {
+    int multas_rango1;
+    int multas_rango2;
+    int multas_resto;
+}T_VELOCIDAD;
+
+typedef struct {
+    char coche[N];
+    int num_multas_semaforo;
+    T_VELOCIDAD velocidad;
+    float sancion_semaforo;
+    float sancion_velocidad;
+    int velocidades;
+}T_COCHE;
+
+//funciones
+void Semaforo(T_COCHE* coches, int n_coches);
+void Velocidad(T_COCHE* coches, int n_coches);
+void CalcularSanciones(T_COCHE* coches, int n_coches);
+void CargaRadaresFichero(FILE* pf_multas, T_COCHE* coches, int n_coches);
+
+//
+int main(void)
+{
+    int contador_semaforo;
+    contador_semaforo = 0;
+    int contador_velocidad;
+    contador_velocidad = 0;
+    int opc, i;
+    int n_coches;
+    T_COCHE* v_coches;
+    FILE* pf_multas;
+    T_VELOCIDAD* v_velocidad;
+
+    printf("¿Cuantos coches van a pasar en total?\n");
+    scanf_s("%d", &n_coches);
+
+    v_coches = (T_COCHE*)calloc(n_coches, sizeof(T_COCHE));
+    if (v_coches == NULL) {
+        printf("\n Error en la asignacion de memoria: ");
+        free(v_coches);
+    }
+
+
+    v_coches[0].velocidad.multas_rango1 = 0;
+    v_coches[0].velocidad.multas_rango2 = 0;
+    v_coches[0].velocidad.multas_resto = 0;
+    v_coches[0].num_multas_semaforo = 0;
+    v_coches[0].sancion_velocidad = 0;
+    v_coches[0].sancion_semaforo = 0;
+
+    // pf_multas = fopen_s("datos.txt", "a");
+
+    errno_t err;
+    err = fopen_s(&pf_multas, "C:/Users/patri/Documents/Primero/Academia/Informática/PROGRA/Multas.txt", "a");
+    if (err == 0) {
+        printf("Abierto\n");
+    }
+    else {
+        fclose(pf_multas);
+    }
+
+        Velocidad(v_coches, n_coches);
+        Semaforo(v_coches, n_coches);
+
+        do {
+            printf("-----MENU-----\n");
+            printf("Seleccione un opcion:\n");
+            printf("1.Mostrar multas del semáforo\n");
+            printf("2.Mostrar multas del radar de velocidad\n");
+            printf("3.Calcular las sanciones y las multas a pagar\n");
+            printf("4.Salir\n");  //cuando sales del programa se guardan los datos en el fichero;
+            scanf_s("%d", &opc);
+            fflush(stdin);
+            switch (opc) {
+            case 1: //Semaforo
+                for (i = 0; i < n_coches; i++) {
+                    if (v_coches[i].num_multas_semaforo != 0) {
+                        contador_semaforo++;
+                    }
+                }
+                printf("%d multas por semáforo", contador_semaforo);
+
+                break;
+
+            case 2:  //velocidad
+                for (i = 0; i < n_coches; i++) {
+                if (v_coches[i].velocidad.multas_rango1 != 0 || v_coches[i].velocidad.multas_rango2 != 0 || v_coches[i].velocidad.multas_resto != 0) {
+                    contador_velocidad++;
+                }
+                 }
+                printf("%d multas por velocidad", contador_velocidad);
+
+                break;
+
+            case 3:  //Calcula que hay que pagar
+                CalcularSanciones(v_coches, n_coches);
+                for (i = 0; i < n_coches; i++) {
+                printf("%f a pagar por multas de semáforo y %f por multas de velocidad", v_coches[i].sancion_semaforo, v_coches[i].sancion_velocidad);
+                }
+                break;
+            case 4:  //salir del programa y guarda fichero
+                CargaRadaresFichero(pf_multas, v_coches, n_coches);
+                printf("Bye");
+                break;
+
+            default:
+                printf("La opcion seleccionada es incorrecta, introduzca otro numero\n");
+
+            } printf("\n");
+            // return 0;
+        } while (opc != 5);
+}
+
+
+
+
+
+void Velocidad(T_COCHE* coches, int n_coches) {
+    int i,j, vel;
+
+    for (j = 0; j < n_coches; j++) {
+        printf("Introduzca velocidades\n");
+        scanf_s("%d", &coches[j].velocidades);
+    }
+
+    for (i = 0; i < n_coches; i++) {
+ 
+        if(coches[i].velocidades > 90  && coches[i].velocidades < 100 ) {
+            (coches[i].velocidad.multas_rango1)++;
+            fgets(&coches[i].coche[i], N, stdin);
+        }
+        else {
+            if(coches[i].velocidades > 100 && coches[i].velocidades < 110 ) {
+                (coches[i].velocidad.multas_rango2)++;
+                fgets(&coches[i].coche[i], N, stdin);
+            }
+            else {
+                if (coches[i].velocidades > 110 ) {
+                    (coches[i].velocidad.multas_resto)++;
+                    fgets(&coches[i].coche[i], N, stdin);
+                }else{
+                    fgets(&coches[i].coche[i], N, stdin);
+
+                }
+            }
+        }
+    }
+}
+
+
+void Semaforo(T_COCHE* coches, int n_coches)
+{
+    int i;
+    for (i = 0; i < n_coches; i++) {
+        if ("semaforo rojo y se lo salta") {
+            coches->num_multas_semaforo++;
+        }
+        printf("\n Introduzca la matricula del coche correspondiente \n");
+        fgets(coches[i].coche, N, stdin);
+        // }
+         //return 0;
+    }
+}
+
+
+    void CalcularSanciones(T_COCHE * coches, int n_coches){
+        int i, j;
+        for (i = 0; i < n_coches; i++) {
+            if (coches[i].num_multas_semaforo != 0) {
+            coches[i].sancion_semaforo = coches[i].num_multas_semaforo * 100.5; //multa de semaforo 100 euros
+            }
+        }
+        for (j = 0; j < n_coches; j++) {
+            if (coches[j].velocidad.multas_rango1 != 0) {
+                coches[j].sancion_velocidad = coches[j].velocidad.multas_rango1 * 50.5;
+            }
+            else {
+                if (coches[j].velocidad.multas_rango2 != 0) {
+                    coches[j].sancion_velocidad = coches[j].velocidad.multas_rango1 * 60.5;
+                }
+                else {
+                    if (coches[j].velocidad.multas_resto != 0) {
+                        coches[j].sancion_velocidad = coches[j].velocidad.multas_rango1 * 70.5;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+void CargaRadaresFichero(FILE* pf_multas, T_COCHE* coches, int n_coches) {
+    int valor;
+    int i;
+
+    rewind(pf_multas);
+    i = 0;
+    do {
+        valor = fprintf(pf_multas, "%s %d %d %d %d %f %f", &(coches[i].coche[i]), &(coches[i].num_multas_semaforo), &(coches->velocidad.multas_rango1), &(coches[i].velocidad.multas_rango2), &(coches[i].velocidad.multas_resto), &(coches[i].sancion_semaforo), &(coches[i].sancion_velocidad));
+        if (valor == 7) {
+            printf("\n%s %d %d %d %d %f %f", coches[i].coche[i], coches[i].num_multas_semaforo, coches[i].velocidad.multas_rango1, coches[i].velocidad.multas_rango2, coches[i].velocidad.multas_resto, coches[i].sancion_semaforo, coches[i].sancion_velocidad);
+            i++;
+        }
+    } while (valor == 7);
+    printf("\nSe han cargado %d radares en el vector de radares", i);
+    return;
+}
